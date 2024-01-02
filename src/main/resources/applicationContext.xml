@@ -11,4 +11,9 @@
           class="uz.mirkamol.springcourse.PopMusic">
     </bean>
 
+    <bean id = "musicPlayer"
+          class="uz.mirkamol.springcourse.MusicPlayer">
+          <constructor-arg ref = "musicBean"/>
+    </bean>
+
 </beans>
