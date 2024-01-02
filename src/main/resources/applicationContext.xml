@@ -8,12 +8,14 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
     <bean id="musicBean"
-          class="uz.mirkamol.springcourse.PopMusic">
+          class="uz.mirkamol.springcourse.ClassicalMusic">
     </bean>
 
     <bean id = "musicPlayer"
           class="uz.mirkamol.springcourse.MusicPlayer">
-          <constructor-arg ref = "musicBean"/>
+          <property name="music" ref="musicBean"/>
+          <property name="name" value="Some name"/>
+          <property name="volume" value="50"/>
     </bean>
 
 </beans>
