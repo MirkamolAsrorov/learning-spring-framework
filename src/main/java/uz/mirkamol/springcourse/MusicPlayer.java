@@ -1,6 +1,8 @@
 package uz.mirkamol.springcourse;
 
+import org.springframework.stereotype.Component;
 
+@Component
 public class MusicPlayer {
     private Music music;
     private String name;

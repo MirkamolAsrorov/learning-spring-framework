@@ -1,5 +1,8 @@
 package uz.mirkamol.springcourse;
 
+import org.springframework.stereotype.Component;
+
+
 public class PopMusic implements Music{
     public void doMyInit(){
         System.out.println("Doing my initialization");
