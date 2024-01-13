@@ -2,23 +2,34 @@ package uz.mirkamol.springcourse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
+
+import java.util.Random;
 
 @Component
 public class MusicPlayer {
-    private Music music;
-    private Music music2;
+    private ClassicalMusic classicalMusic;
+    private RockMusic rockMusic;
     private String name;
     private int volume;
+
     @Autowired
-    public MusicPlayer(@Qualifier("classicalMusic") Music music,
-                       @Qualifier("rockMusic") Music music2) {
-        this.music = music;
-        this.music2 = music2;
+    public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic) {
+        this.classicalMusic = classicalMusic;
+        this.rockMusic = rockMusic;
     }
 
-    public String playMusic() {
-   return "Playing:  " + music.getSong() +
-                ", " + music2.getSong();
+
+    public String playMusic(Genre genre) {
+        Random random = new Random();
+        if (genre.equals(Genre.CLASSICAL)) {
+            return classicalMusic.getSong(random);
+
+        } else if (Genre.ROCK.equals(genre)) {
+           return rockMusic.getSong(random);
+
+        }
+        return "not found";
     }
 }

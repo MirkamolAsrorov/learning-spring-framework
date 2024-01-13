@@ -8,8 +8,9 @@ public class TestSpring {
                 "applicationContext.xml"
         );
 
-        Computer computer = context.getBean("computer", Computer.class);
-        System.out.println(computer);
+       MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+
+        System.out.println(musicPlayer.playMusic(Genre.ROCK));
         context.close();
     }
 }

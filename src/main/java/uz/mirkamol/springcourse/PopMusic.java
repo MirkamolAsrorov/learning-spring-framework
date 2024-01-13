@@ -2,6 +2,8 @@ package uz.mirkamol.springcourse;
 
 import org.springframework.stereotype.Component;
 
+import java.util.Random;
+
 
 public class PopMusic implements Music{
     public void doMyInit(){
@@ -12,7 +14,7 @@ public class PopMusic implements Music{
         System.out.println("Doing my destruction");
     }
     @Override
-    public String getSong() {
+    public String getSong(Random random) {
         return "Blinding Lights";
     }
 }
