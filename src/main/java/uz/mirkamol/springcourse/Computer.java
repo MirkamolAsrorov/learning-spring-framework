@@ -2,7 +2,7 @@ package uz.mirkamol.springcourse;
 
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class Computer {
 private int id;
 private MusicPlayer musicPlayer;

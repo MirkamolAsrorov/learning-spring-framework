@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Random;
 
-@Component
+//@Component
 public class MusicPlayer {
     private ClassicalMusic classicalMusic;
     private RockMusic rockMusic;

@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
-@Component
+//@Component
 public class RockMusic implements Music{
     private List<String> playList = new ArrayList<>(
             Arrays.asList("Wind cries Mary",

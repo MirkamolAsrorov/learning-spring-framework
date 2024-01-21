@@ -6,7 +6,7 @@ import java.util.Random;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-@Component
+//@Component
 public class PopMusic implements Music{
 
     @PostConstruct
