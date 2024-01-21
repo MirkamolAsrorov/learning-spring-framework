@@ -1,5 +1,5 @@
 package uz.mirkamol.springcourse;
 
 public enum Genre {
-    CLASSICAL, ROCK
+    CLASSICAL, ROCK, POP
 }

@@ -11,19 +11,9 @@ import java.util.Random;
 //@Component
 //@Scope("prototype")
 public class ClassicalMusic implements Music{
-    private List<String> playList = new ArrayList<>(
-            Arrays.asList("Hungarian Rhapsody",
-                    " Eine kleine Nachtmusik",
-                    "Für Elise"));
 
     @Override
-    public  String getSong(Random random) {
-        if (playList == null || playList.isEmpty()) {
-            throw new IllegalArgumentException("ArrayList is null or empty");
-        }
-
-        int randomIndex = random.nextInt(playList.size());
-
-        return playList.get(randomIndex);
+    public  String getSong() {
+    return "Hungarian Rhapsody";
     }
 }

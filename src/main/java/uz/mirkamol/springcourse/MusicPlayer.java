@@ -6,34 +6,22 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 //@Component
 public class MusicPlayer {
-    private ClassicalMusic classicalMusic;
-    private RockMusic rockMusic;
+
+    private List<Music> musicList = new ArrayList<>();
+
     @Value("${musicPlayer.name}")
     private String name;
     @Value("${musicPlayer.volume}")
     private int volume;
 
-    @Autowired
-    public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic) {
-        this.classicalMusic = classicalMusic;
-        this.rockMusic = rockMusic;
-    }
-
-
-    public String playMusic(Genre genre) {
-        Random random = new Random();
-        if (genre.equals(Genre.CLASSICAL)) {
-            return classicalMusic.getSong(random);
-
-        } else if (Genre.ROCK.equals(genre)) {
-           return rockMusic.getSong(random);
-
-        }
-        return "not found";
+    public MusicPlayer(List<Music> musicList) {
+        this.musicList = musicList;
     }
 
     public String getName() {
@@ -43,4 +31,14 @@ public class MusicPlayer {
     public int getVolume() {
         return volume;
     }
+
+    public String playMusic(Genre genre) {
+       Random random = new Random();
+        int randomMusicGenre = random.nextInt(musicList.size());
+        Music music = musicList.get(randomMusicGenre);
+        return "Playing " + music.getSong() +
+                " with " + volume + " volume";
+    }
+
+
 }
